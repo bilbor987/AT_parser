@@ -13,7 +13,7 @@ int main(int argc, char* argv[]) {
         }
     }
     else{
-        printf("argument list is empty.\n");
+        printf("\nargument list is empty.\n");
     }
 
     //parse('s');

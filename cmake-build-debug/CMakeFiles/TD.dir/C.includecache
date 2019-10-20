@@ -6,15 +6,19 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/pocol/CLionProjects/TD/at.h
+C:/Users/Bogdan/CLionProjects/AT_parser/at.c
+at.h
+C:/Users/Bogdan/CLionProjects/AT_parser/at.h
+
+C:/Users/Bogdan/CLionProjects/AT_parser/at.h
 stdbool.h
 -
 stdint.h
 -
 
-C:/Users/pocol/CLionProjects/TD/main.c
+C:/Users/Bogdan/CLionProjects/AT_parser/main.c
 stdio.h
 -
 at.h
-C:/Users/pocol/CLionProjects/TD/at.h
+C:/Users/Bogdan/CLionProjects/AT_parser/at.h
 
