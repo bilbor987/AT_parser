@@ -214,4 +214,16 @@ uint8_t parse(uint8_t ch) {
 
     }
 
+
+//#TODO
+//treat state -1 state
+//maybe use ENUM
+//    typedef enum
+//    {
+//        STATE_MACHINE_NOT_READY,
+//        STATE_MACHINE_READY_OK,
+//        STATE_MACHINE_READY_WITH_ERROR //state -1 basically and maybe reset_fsm()
+//    }STATE_MACHINE_RETURN_VALUE;
+//    STATE_MACHINE_RETURN_VALUE at_command_parse(uint8_t current_character);
+
 }

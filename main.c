@@ -16,6 +16,12 @@ int main(int argc, char* argv[]) {
         printf("\nargument list is empty.\n");
     }
 
+//#TODO
+//add a config for CLion to simulate read with command line args
+//implement file read to test code
+
+
+
     //parse('s');
     return 0;
 }
