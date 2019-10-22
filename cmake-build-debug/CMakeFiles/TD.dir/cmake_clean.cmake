@@ -1,9 +1,9 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/TD.dir/at.c.obj"
   "CMakeFiles/TD.dir/main.c.obj"
+  "CMakeFiles/TD.dir/at.c.obj"
+  "TD.pdb"
   "TD.exe"
   "TD.exe.manifest"
-  "TD.pdb"
   "libTD.dll.a"
 )
 

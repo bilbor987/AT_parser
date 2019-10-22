@@ -6,19 +6,19 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/Bogdan/CLionProjects/AT_parser/at.c
+D:/Poli_CTI_RO_2019_2020/AT_Parser/at.c
 at.h
-C:/Users/Bogdan/CLionProjects/AT_parser/at.h
+D:/Poli_CTI_RO_2019_2020/AT_Parser/at.h
 
-C:/Users/Bogdan/CLionProjects/AT_parser/at.h
+D:/Poli_CTI_RO_2019_2020/AT_Parser/at.h
 stdbool.h
 -
 stdint.h
 -
 
-C:/Users/Bogdan/CLionProjects/AT_parser/main.c
+D:/Poli_CTI_RO_2019_2020/AT_Parser/main.c
 stdio.h
 -
 at.h
-C:/Users/Bogdan/CLionProjects/AT_parser/at.h
+D:/Poli_CTI_RO_2019_2020/AT_Parser/at.h
 

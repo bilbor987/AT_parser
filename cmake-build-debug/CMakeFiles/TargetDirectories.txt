@@ -1,3 +1,3 @@
-C:/Users/Bogdan/CLionProjects/AT_parser/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-C:/Users/Bogdan/CLionProjects/AT_parser/cmake-build-debug/CMakeFiles/TD.dir
-C:/Users/Bogdan/CLionProjects/AT_parser/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Poli_CTI_RO_2019_2020/AT_Parser/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+D:/Poli_CTI_RO_2019_2020/AT_Parser/cmake-build-debug/CMakeFiles/TD.dir
+D:/Poli_CTI_RO_2019_2020/AT_Parser/cmake-build-debug/CMakeFiles/edit_cache.dir

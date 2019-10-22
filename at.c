@@ -38,7 +38,7 @@ uint8_t parse(uint8_t ch) {
             }
 
         case 2: //after LF, start to distribute
-            if (ch == "O"){
+            if (ch == 'O'){
                 state = 3;
                 break;
             }
@@ -47,8 +47,9 @@ uint8_t parse(uint8_t ch) {
                 break;
             }
             else if (ch == '+'){
-                at.str[line_index][string_index++] = ch;
-                state = 13;
+                //at.str[line_index][string_index++] = ch;
+                state = 12;
+                break;
             }
             else{
                 state = -1;
@@ -144,6 +145,72 @@ uint8_t parse(uint8_t ch) {
                 state = -1;
                 break;
             }
+
+        case 12:
+            if (ch != CR){
+                at.str[line_index][string_index++] = ch;
+                //break;
+            }
+            else if (string_index != 0) { //verifies if at least one CHAR is read before CR
+                at.str[line_index][string_index++] = '\0';
+                state = 13;
+                break;
+            }
+            else {
+                state = -1;
+                break;
+            }
+
+        case 13:
+            if(ch == LF){
+                state = 14;
+                break;
+            }
+            else{
+                state = -1;
+                break;
+            }
+
+        case 14:
+            if(ch == '+'){ //means that more useful lines are coming and need to return to reading state
+                state = 12;
+                break;
+            }
+            else if(ch == CR){
+                state = 15;
+                break;
+            }
+            else{
+                state = -1;
+                break;
+            }
+
+        case 15:
+            if(ch == LF){
+                state = 16;
+                break;
+            }
+            else{
+                state = -1;
+                 break;
+            }
+
+        case 16:
+            if(ch == 'O'){
+                state = 3; //returns to a previous transition of states where K<CR><LF> is treated
+                break;
+            }
+
+            else if(ch == 'E'){
+                state = 7; //returns to a previous transition of states where RROR<CR><LF> is treated
+                break;
+            }
+
+            else{
+                state = -1;
+                break;
+            }
+
 
     }
 

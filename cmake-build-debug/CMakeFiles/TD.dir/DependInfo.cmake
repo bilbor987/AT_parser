@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "C:/Users/Bogdan/CLionProjects/AT_parser/at.c" "C:/Users/Bogdan/CLionProjects/AT_parser/cmake-build-debug/CMakeFiles/TD.dir/at.c.obj"
-  "C:/Users/Bogdan/CLionProjects/AT_parser/main.c" "C:/Users/Bogdan/CLionProjects/AT_parser/cmake-build-debug/CMakeFiles/TD.dir/main.c.obj"
+  "D:/Poli_CTI_RO_2019_2020/AT_Parser/at.c" "D:/Poli_CTI_RO_2019_2020/AT_Parser/cmake-build-debug/CMakeFiles/TD.dir/at.c.obj"
+  "D:/Poli_CTI_RO_2019_2020/AT_Parser/main.c" "D:/Poli_CTI_RO_2019_2020/AT_Parser/cmake-build-debug/CMakeFiles/TD.dir/main.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

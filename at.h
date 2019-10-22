@@ -12,8 +12,8 @@
 #define STR_SIZE 99
 
 typedef struct {
-    bool ok; //how exactly to use this???
-    uint32_t line_count; //what is this???
+    bool ok; //how exactly to use this??? daca a venit OK sau error
+    uint32_t line_count; //what is this??? need to know how many used lines in str and maybe need to transmit to a higher level this info
     char str[MAX_LINE_COUNT][STR_SIZE + 1]; //+1 for \0 as a word end
 } AT_DATA;
 
