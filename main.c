@@ -19,7 +19,7 @@ int main(int argc, char* argv[]) {
 //#TODO
 //add a config for CLion to simulate read with command line args
 //implement file read to test code
-
+//new line to commit again hehe
 
 
     //parse('s');
