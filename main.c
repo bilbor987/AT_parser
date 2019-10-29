@@ -1,7 +1,11 @@
 #include <stdio.h>
 #include "at.h"
 
+#define CR 0x0D
+#define LF 0x0A
+
 FILE *inFile;
+FILE *outFile;
 
 int main(int argc, char* argv[]) {
     int i, ret;
@@ -14,17 +18,23 @@ int main(int argc, char* argv[]) {
         for(i = 1; i < argc; i++){
             printf("%s\t", argv[i]);
         }
-        printf("\n");
+        printf("\n\n\n");
 
         inFile = fopen(argv[1], "rb");
-
+        outFile = fopen(argv[2], "w");
         while (!feof(inFile)) {
             c = fgetc(inFile);
-            printf("Am citit din fisier %c\n", c);
+            fprintf(outFile, "Am citit din fisier ");
+            if (c == CR) fprintf(outFile, "CR\n");
+            else if (c == LF) fprintf(outFile, "LF\n");
+            else fprintf(outFile, "%c\n", c);
 
             ret = parse(c);
-           // printf("Parse returned %d\n", ret);
+            fprintf(outFile, "Parse returned %d\n\n", ret);
+            if (ret != 0) break;
         }
+
+        showAT_DATA();
     }
     else{
         printf("\nargument list is empty.\n");

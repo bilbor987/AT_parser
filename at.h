@@ -22,6 +22,7 @@ extern int state;
 
 int parse(uint8_t ch);
 void reset_fsm();
+void showAT_DATA();
 
 
 #endif //TD_AT_H

@@ -4,8 +4,8 @@
 #include "at.h"
 #include <stdio.h>
 
-#define CR 0x0A
-#define LF 0x0D
+#define CR 0x0D
+#define LF 0x0A
 
 typedef enum {
     STATE_MACHINE_NOT_READY,
@@ -21,7 +21,7 @@ void reset_fsm(){
 }
 
 int parse(uint8_t ch) {
-    static uint32_t line_index = 0, string_index = 0; //fancy way to say i & j
+    static uint32_t string_index = 0; //fancy way to say i & j
 
     switch (state) {
         case 0:
@@ -145,7 +145,7 @@ int parse(uint8_t ch) {
 
         case 11:
             if (ch == LF) { //final transition for the ERROR case
-                at.ok = true;
+                at.ok = false;
                 printf("Tranzitie finala pentru cazul ERROR, resetez automatul\n");
                 reset_fsm();
                 return STATE_MACHINE_READY_WITH_ERROR;
@@ -157,12 +157,13 @@ int parse(uint8_t ch) {
         case 12:
             if (ch != CR) {
                 printf("Am citit %c, astept citire caracter\n");
-                at.str[line_index][string_index++] = ch;
+                at.str[at.line_count][string_index++] = ch;
                 break;
             } else if (string_index != 0) { //verifies if at least one CHAR is read before CR
                 printf("Cazul in care a citit ceva inainte de CR si acum a venit CRu si astept LF\n");
                 printf("Am terminat de citit si pun terminatorul de sir la finalul liniei\n");
-                at.str[line_index][string_index++] = '\0';
+                at.str[at.line_count][string_index++] = '\0';
+                string_index = 0;
                 state = 13;
                 break;
             } else {
@@ -173,7 +174,7 @@ int parse(uint8_t ch) {
         case 13:
             if (ch == LF) {
                 printf("Am citit LF, astept < + > sau CR \n");
-                line_index ++; //new line in matrix of commands
+                at.line_count ++; //new line in matrix of commands
                 state = 14;
                 break;
             } else {
@@ -219,15 +220,29 @@ int parse(uint8_t ch) {
                 break;
             }
         case -1:
-            printf("Stare de eroare, resetez automatul\n", ch);
+            printf("Stare de eroare (case = -1), resetez automatul\n", ch);
             reset_fsm();
             at.ok = false;
+            return -1;
             break;
 
     }
 
     return STATE_MACHINE_NOT_READY; //means that the FSM needs more chars to continue parsing lines
 
+}
+
+void showAT_DATA() {
+    int i, j;
+
+    printf("bool: %s\n", at.ok ? "true" : "false");
+    printf("line count = %d\n", at.line_count);
+    for (i = 0; i < at.line_count; i++) {
+        for (j = 0; at.str[i][j] != '\0'; ++j) {
+            printf("%c", at.str[i][j]);
+        }
+        printf("\n");
+    }
 }
 
 //#TODO
