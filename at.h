@@ -18,9 +18,9 @@ typedef struct {
 } AT_DATA;
 
 extern AT_DATA at;
-extern uint8_t state;
+extern int state;
 
-uint8_t parse(uint8_t ch);
+int parse(uint8_t ch);
 void reset_fsm();
 
 
