@@ -1,18 +1,40 @@
-Am citit din fisier CR
 Parse returned 0
 
-Am citit din fisier LF
 Parse returned 0
 
-Am citit din fisier O
 Parse returned 0
 
-Am citit din fisier K
 Parse returned 0
 
-Am citit din fisier CR
 Parse returned 0
 
-Am citit din fisier LF
+Parse returned 0
+
+Parse returned 0
+
+Parse returned 0
+
+Parse returned 0
+
+Parse returned 0
+
+Parse returned 0
+
+Parse returned 0
+
+Parse returned 0
+
+Parse returned 0
+
+Parse returned 0
+
+Parse returned 0
+
+Parse returned 0
+
+Parse returned 0
+
+Parse returned 0
+
 Parse returned 1
 
