@@ -1,6 +1,8 @@
 //
 // Started by pocol and rat on 10/18/2019.
+// Pocol Bogdan - Adrian & Rat Alexandru an IV CTI RO
 //
+
 #include "at.h"
 #include <stdio.h>
 
@@ -157,12 +159,14 @@ int parse(uint8_t ch) {
         case 12:
             if (ch != CR) {
 //                printf("Am citit %c, astept citire caracter\n");
-                at.str[at.line_count][string_index++] = ch;
+                if (at.line_count < MAX_LINE_COUNT)
+                    at.str[at.line_count][string_index++] = ch;
                 break;
             } else if (string_index != 0) { //verifies if at least one CHAR is read before CR
 //                printf("Cazul in care a citit ceva inainte de CR si acum a venit CRu si astept LF\n");
 //                printf("Am terminat de citit si pun terminatorul de sir la finalul liniei\n");
-                at.str[at.line_count][string_index++] = '\0';
+                if (at.line_count < MAX_LINE_COUNT)
+                    at.str[at.line_count][string_index++] = '\0';
                 string_index = 0;
                 state = 13;
                 break;
@@ -174,7 +178,8 @@ int parse(uint8_t ch) {
         case 13:
             if (ch == LF) {
 //                printf("Am citit LF, astept < + > sau CR \n");
-                at.line_count ++; //new line in matrix of commands
+                if (at.line_count < MAX_LINE_COUNT)
+                    at.line_count ++; //new line in matrix of commands
                 state = 14;
                 break;
             } else {

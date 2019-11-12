@@ -6,6 +6,12 @@
 
 #IncludeRegexTransform: 
 
+D:/Poli_CTI_RO_2019_2020/AT_Parser/at.c
+at.h
+D:/Poli_CTI_RO_2019_2020/AT_Parser/at.h
+stdio.h
+-
+
 D:/Poli_CTI_RO_2019_2020/AT_Parser/at.h
 stdbool.h
 -

@@ -1,5 +1,6 @@
 //
 // Started by pocol and rat on 10/18/2019.
+// Pocol Bogdan - Adrian & Rat Alexandru an IV CTI RO
 //
 
 #ifndef TD_AT_H
@@ -8,7 +9,7 @@
 #include <stdbool.h>
 #include <stdint.h>
 
-#define MAX_LINE_COUNT 1000
+#define MAX_LINE_COUNT 100
 #define STR_SIZE 99
 
 typedef struct {

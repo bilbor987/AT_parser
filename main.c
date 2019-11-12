@@ -1,5 +1,6 @@
 //
 // Started by pocol and rat on 10/18/2019.
+// Pocol Bogdan - Adrian & Rat Alexandru an IV CTI RO
 //
 
 #include <stdio.h>
